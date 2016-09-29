@@ -9,7 +9,7 @@ var SongQueueEntryView = Backbone.View.extend({
   events: {
     'click': function() {
       this.model.addToTop();
-      this.model.play();
+      // this.model.play();
     }
   },
 
