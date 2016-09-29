@@ -1,3 +1,45 @@
 td {
   vertical-align: top;
 }
+
+th {
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #aaa;
+  width: inherit;
+}
+
+tr td tr td:hover {
+  font-weight: bold;
+}
+
+#library, #songQueue {
+  padding: 5px;
+  width: 400px;
+  border: 1px solid #ddd;
+}
+
+
+#library td:first-child {
+  width: 25%;
+}
+#library td:nth-child(2) {
+  width: 70%;
+}
+
+#songQueue td:first-child {
+  width: 25%;
+}
+#songQueue td:nth-child(2) {
+  width: 70%;
+}
+
+table {
+  padding: 20px 20%;
+  text-align: center;
+}
+
+body div {
+  border: 1px solid #eee;
+  padding: 10px 0;
+  text-align: center;
+}
