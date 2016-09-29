@@ -23,6 +23,7 @@ tr td tr td:hover {
   width: 25%;
 }
 #library td:nth-child(2) {
+  text-align: left;
   width: 70%;
 }
 
@@ -31,6 +32,7 @@ tr td tr td:hover {
 }
 #songQueue td:nth-child(2) {
   width: 70%;
+  text-align: left;
 }
 
 table {

@@ -16,6 +16,11 @@ var SongQueue = Backbone.Collection.extend({
       }
     });
 
+    this.on('addToTop', function(song) {
+      this.remove(song);
+      this.add(song, {at: 0});
+    });
+
     this.on('dequeue', function(song) {
       this.remove(song);
     });
