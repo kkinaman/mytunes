@@ -11,6 +11,12 @@ var AppView = Backbone.View.extend({
     this.model.on('change:currentSong', function(model) {
       this.playerView.setSong(model.get('currentSong'));
     }, this);
+    //do we need to change the songqueueview now?
+    // this.model.on('')
+    // this.model.get('songQueue').on('add remove', function(model) {
+    //   // console.log('test');
+    //   this.render();
+    // });
   },
 
   render: function() {
