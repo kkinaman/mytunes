@@ -13,6 +13,11 @@ describe('SongQueue', function() {
       url: '/test/testsong2.mp3',
       title: 'test song 2'
     };
+    songData3 = {
+      artist: 'data',
+      url: '/test/testsong3.mp3',
+      title: 'test song 3'
+    };
   });
 
   afterEach(function() {
@@ -56,7 +61,7 @@ describe('SongQueue', function() {
     });
   });
 
-  describe('when a song is dequeued', function() {
+  describe('when the only song in the queue is dequeued', function() {
     it('removes the song', function() {
       removeSpy = sinon.spy(SongQueue.prototype, 'remove');
       var songQueue = new SongQueue(songData1);
@@ -64,6 +69,20 @@ describe('SongQueue', function() {
       expect(removeSpy).to.have.been.called;
       SongQueue.prototype.remove.restore();
       expect(songQueue.length).to.equal(0);
+    });
+  });
+  describe('when any song is dequeued', function() {
+    it('removes the song', function() {
+      removeSpy = sinon.spy(SongQueue.prototype, 'remove');
+      var songQueue = new SongQueue([songData1, songData2, songData3]);
+      song1 = songQueue.at(0);
+      song3 = songQueue.at(2);
+      songQueue.at(1).dequeue();
+      expect(removeSpy).to.have.been.called;
+      SongQueue.prototype.remove.restore();
+      expect(songQueue.length).to.equal(2);
+      expect(songQueue.at(0)).to.equal(song1);
+      expect(songQueue.at(1)).to.equal(song3);
     });
   });
 
