@@ -6,11 +6,7 @@ var PlayerView = Backbone.View.extend({
   el: '<audio controls autoplay />',
 
   initialize: function() {
-    //this is what jace did incorrectly
-    // var song = this.model;
-    // this.$el.on('ended', function(song) {
-    //   song.model.ended;
-    // });
+
   },
 
   events: {

@@ -9,6 +9,8 @@
 
     <script src="data/data.js"></script>
 
+    <script src="env/config.js"></script>
+
     <script src="models/SongModel.js"></script>
     <script src="collections/Songs.js"></script>
     <script src="collections/SongQueue.js"></script>
@@ -21,18 +23,28 @@
     <script src="views/SongQueueView.js"></script>
     <script src="views/SongQueueEntryView.js"></script>
 
+    <link rel='stylesheet' href='styles/styles.css'>
+
     <script>
       $(function() {
         // set up model objects
-        var library = new Songs(songData);
+        var library = new Songs();
         var app = new AppModel({library: library});
 
         // build a view for the top level of the whole app
         var appView = new AppView({model: app});
 
         // put the view onto the screen
-        $('body').append(appView.render());
+        $('body').prepend(appView.render());
       });
     </script>
+    <table>
+      <tr>
+        <td id='library'>
+        </td>
+        <td id='songQueue'>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>

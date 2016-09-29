@@ -31,6 +31,7 @@ describe('Songs', function() {
 
     it('should GET song data from Parse when initialized', function() {
       songs = new Songs();
+      console.log('in test GET');
       expect(requests[0].method).to.equal('GET');
       expect(requests[0].url).to.include('https://api.parse.com/1/classes/songs');
     });
