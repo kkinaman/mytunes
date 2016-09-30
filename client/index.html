@@ -38,6 +38,18 @@
 
         // put the view onto the screen
         $('body').prepend(appView.render());
+
+        $('body').keydown((event) => {
+          if (event.keyCode === 32) {
+            event.preventDefault();
+            var musicPlayer = document.getElementById('musicPlayer');
+            if (musicPlayer.paused) {
+              musicPlayer.play();
+            } else {
+              musicPlayer.pause();
+            }
+          }
+    });
       });
     </script>
     <div id='songName'>
