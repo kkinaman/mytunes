@@ -24,7 +24,7 @@ var PlayerView = Backbone.View.extend({
   },
 
   render: function() {
-    $('#songName').text(this.model.get('title')); 
+    $('#songName').text('Currently playing: ' +  this.model.get('title') + ' (' + this.model.get('artist') + ')'); 
     return this.$el.attr('src', this.model ? this.model.get('url') : '');
   }
 
